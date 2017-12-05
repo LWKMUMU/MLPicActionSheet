@@ -93,6 +93,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "MLPicActionSheet"
+  s.resources = 'MLPicActionSheet/images/*.{png}'
   #s.exclude_files = "LWKScroViewslideButton/Exclude"
   s.requires_arc = true
   s.framework = "UIKit"
