@@ -16,4 +16,5 @@ typedef void(^complete)(NSMutableArray <UIImage *>* selectedImagesArray);
 @property(nonatomic,copy)complete completeBloack;
 @property(nonatomic,assign)NSInteger maxIndex;
 @property(nonatomic,strong)UIColor * btnColor;
+@property(nonatomic,copy)void(^cancal)(void);
 @end

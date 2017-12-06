@@ -88,6 +88,9 @@
             NSLog(@"选中的图片数量===%ld张",selectedImagesArray.count);
             [self removeFromSuperview];
         };
+        vc.cancal = ^{
+            [self removeFromSuperview];
+        };
         vc.view.backgroundColor = [UIColor whiteColor];
         CreditNavigationController *nav=[[CreditNavigationController alloc]initWithRootViewController:vc];
         [nav navTitleColor:self.btnColor];
@@ -111,12 +114,15 @@
         [imagesArray addObject:image];
         if (self.bloack){
             self.bloack(imagesArray);
+            [self removeFromSuperview];
         }
     }];
     
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self removeFromSuperview];
+    }];
 }
 
 /*
